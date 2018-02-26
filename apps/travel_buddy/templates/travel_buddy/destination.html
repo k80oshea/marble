@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Destination</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script type="text/javascript"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <span class="col-md-9"></span>
+            <div class="col-md-2">{{user.name}} - <a href="/travels">Home</a></div>
+            <a href="/logout" class="col-md-1">Logout</a>
+        </div>
+        <h3>{{trip.destination}}</h3>
+        <p>
+            <span>Planned by: {{trip.planner.name}}</span><br>
+            <span>Description: {{trip.description}}</span><br>
+            <span>Travel Date From: {{trip.start_date}}</span><br>
+            <span>Travel Date To: {{trip.end_date}}</span><br>
+        </p>
+        <hr>
+        <h4>Other users joining the trip:</h4>
+            {% for user in users %}
+                <p>{{user.name}}</p>
+            {% endfor %}
+    </div>
+</body>
+</html>
