@@ -26,7 +26,7 @@ class UserManager(models.Manager):
             errors.append("Username must be at least 3 characters long")
         if not USER_REGEX.match(post_data['username']):
             errors.append("Invalid characters in Username")
-        check_user = User.objects.filter(username = post_data['username'].lower())
+        check_user = User.objects.filter(username = post_data['username'])
         if len(check_user) > 0:
             errors.append("Username already exists")
 
@@ -64,7 +64,7 @@ class UserManager(models.Manager):
             errors.append("Username must be at least 3 characters long")
         if not USER_REGEX.match(post_data['username']):
             errors.append("Invalid characters in Username")
-        check_user = User.objects.filter(username = post_data['username'].lower())
+        check_user = User.objects.filter(username = post_data['username'])
         if len(check_user) == 0:
             errors.append("Username does not exist")
 
